@@ -1,6 +1,3 @@
-#!/bin/sh
-cd /d/wamp/www/PlatypusLabs
-git checkout dev
 git add .
 git commit -am "made changes"
 git push
