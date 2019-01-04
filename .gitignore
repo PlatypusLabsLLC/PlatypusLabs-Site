@@ -67,9 +67,10 @@ node_modules/
 # Batch Files #
 ######################
 deployhosting.bat
-addcommitpushgithub.bat
+addcommitpushgithub.sh
 pullgithub.bat
 deployhostingpushgithub.bat
+deploynetlify.bat
 
 # HTML Files #
 ######################
