@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: 
+
+Sitemap: https://www.platypuslabs.llc/sitemap.xml
