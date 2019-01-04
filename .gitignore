@@ -63,3 +63,25 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Batch Files #
+######################
+deployhosting.bat
+addcommitpushgithub.bat
+pullgithub.bat
+
+# HTML Files #
+######################
+/public/lor.html
+/public/video.html
+/public/test.html
+/public/pickle.html
+/public/reddittest.html
+/public/scantron.html
+/public/new.html
+/public/newcanvas.html
+/public/crashmybrowser.html
+/public/creditcards.html
+/public/cookieportfolio.html
+/public/google.html
+/public/iframetest.html
