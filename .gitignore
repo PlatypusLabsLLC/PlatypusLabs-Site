@@ -69,6 +69,7 @@ node_modules/
 deployhosting.bat
 addcommitpushgithub.bat
 pullgithub.bat
+deployhostingpushgithub.bat
 
 # HTML Files #
 ######################
