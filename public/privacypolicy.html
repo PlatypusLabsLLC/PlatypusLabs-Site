@@ -1,0 +1,489 @@
+<html><head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126009897-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126009897-1');
+</script>
+	
+	
+    <title>Platypus Labs</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+<style>
+/* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; background-color: #000000; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    body {
+        margin: 0;
+        background-color: #222222;
+        text-align: center
+    }
+    
+    #nav {
+        top: 0px;
+        width: 100%;
+        z-index: 4;
+        opacity: .95
+    }
+    
+    @keyframes fadeToColor {
+        from {
+            background-color: transparent;
+        }
+        to {
+            background-color: #1f2128;
+        }
+    }
+    
+    @keyframes fadeToWhite {
+        from {
+            background-color: #1f2128;
+        }
+        to {
+            background-color: transparent;
+        }
+    }
+    
+    .animateToColor {
+        animation-name: fadeToColor;
+        animation-duration: 400ms;
+    }
+    
+    .animateToWhite {
+        animation-name: fadeToWhite;
+        animation-duration: 400ms;
+    }
+	
+    @keyframes fadeToGold {
+        from {
+            color: white;
+        }
+        to {
+            color: #cea964;
+        }
+    }
+    
+    @keyframes fadeToDef {
+        from {
+            color: #cea964;
+        }
+        to {
+            color: white;
+        }
+    }
+    
+    .animateToGold {
+        animation-name: fadeToGold;
+        animation-duration: 400ms;
+    }
+    
+    .animateToDef {
+        animation-name: fadeToDef;
+        animation-duration: 400ms;
+    }
+    
+    .color1 {
+        background-color: #1f2128;
+    }
+    
+    .color2 {
+        background-color: transparent;
+    }
+    
+    .textColor1 {
+        color: black;
+    }
+    
+    .textColor2 {
+        color: white;
+    }
+
+    .textColor3{
+        color:#cea964;
+    }
+    
+    #apps {
+        text-align: center;
+        float: right;
+        padding-left: 16px;
+        padding-right: 16px;
+        line-height: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        color: white;
+        font-family: 'open sans';
+        font-size: 16px;
+    }
+    
+    #welcome {
+        text-align: center;
+        width: 100%;
+        color: #fffff0;
+        font-family: 'open sans';
+        font-size: 70px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        line-height: 100px;
+    }
+    
+    #welcome1 {
+        text-align: center;
+        width: 100%;
+        color: white;
+        font-family: 'open sans';
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    
+    #team {
+        text-align: center;
+        float: right;
+        padding-left: 16px;
+        padding-right: 32px;
+        line-height: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        color: white;
+        font-family: 'open sans';
+        font-size: 16px;
+    }
+    
+    #platypus {
+        text-align: center;
+        float: left;
+        padding-left: 0px;
+        padding-right: 16px;
+        line-height: 64px;
+        letter-spacing: 1px;
+        font-family: roboto;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    #logodiv {
+        float: left;
+        width: 64px;
+        height: 64px
+    }
+    
+    #logo {
+        width: 32px;
+        padding: 16px;
+        user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    #header-apps {
+        margin-top: 32px;
+        display: inline-block;
+        line-height: 32px;
+        max-width: 960px;
+        color: rgba(0, 0, 0, 0.6);
+        font-family: 'open sans';
+        font-size: 32px;
+        text-align: center
+    }
+    
+    #header-team {
+        margin-top: 32px;
+        display: inline-block;
+        line-height: 32px;
+        max-width: 960px;
+        color: rgba(0, 0, 0, 0.6);
+        font-family: 'open sans';
+        font-size: 32px;
+        text-align: center
+    }
+    
+    #crypto {
+        position: relative;
+        margin-top: 32px;
+        display: inline-block;
+        max-width: 960px;
+        background-color: white;
+        box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+        height: 600px
+    }
+    
+    #crypto-text {
+        float: right;
+        padding-left: 326px;
+        max-width: 650px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: 'open sans';
+        text-align: left
+    }
+    
+    #poll-text {
+        float: left;
+        padding-right: 326px;
+        max-width: 650px;
+        padding-left: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: 'open sans';
+        text-align: left
+    }
+    
+    #crypto-shots {
+        float: left;
+        max-width: 311px;
+        position: absolute;
+        bottom: 0px;
+        max-height: 552px;
+        background-color: black
+    }
+    
+    #poll-shots {
+        right: 0;
+        max-width: 311px;
+        position: absolute;
+        bottom: 0px;
+        max-height: 552px;
+        background-color: black
+    }
+    
+    #appicon {
+        margin-right: 8px;
+        width: 48px;
+        float: left;
+    }
+    
+    #shot-nav {
+        box-sizing: border-box;
+        border-right-color: rgba(0, 0, 0, 0.12);
+        border-right-width: 1px;
+        border-right-style: solid;
+        max-width: 310px;
+        height: 48px;
+    }
+    
+    #shot-navPoll {
+        padding-right: 310px;
+        right: 0;
+        position: absolute;
+        box-sizing: border-box;
+        border-left-color: rgba(0, 0, 0, 0.12);
+        border-left-width: 1px;
+        border-left-style: solid;
+        max-width: 311px;
+        height: 48px;
+    }
+    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {
+            opacity: 0.5
+        }
+        to {
+            opacity: 1
+        }
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: 0.5
+        }
+        to {
+            opacity: 1
+        }
+    }
+    
+    input {
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        border: 0;
+        height: 24px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-family: 'open sans'
+    }
+    
+    button {
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: #3F51B5;
+        border: 0;
+        color: white;
+        font-family: 'open sans';
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        border-radius: 2px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+    }
+    
+    button:hover {
+        opacity: 0.9;
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+        transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .28s cubic-bezier(.4, 0, .2, 1)
+    }
+</style><link type="text/css" rel="stylesheet" href="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/js/page_context.js"></script><script type="text/javascript">
+function rtcScript() {
+    document.oncontextmenu = null;
+    document.onselectstart = null;
+    document.onmousedown = null;
+    document.onclick = null;
+    document.oncopy = null;
+    document.oncut = null;
+    var elements = document.getElementsByTagName('*');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oncontextmenu = null;
+        elements[i].onselectstart = null;
+        elements[i].onmousedown = null;
+        elements[i].oncopy = null;
+        elements[i].oncut = null;
+    }
+    function preventShareThis() {
+        document.getSelection = window.getSelection = function() {
+            return {isCollapsed: true};
+        }
+    }
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+        if (scripts[i].src.indexOf('w.sharethis.com') > -1) {
+            preventShareThis();
+        }
+    }
+    if (typeof Tynt != 'undefined') {
+        Tynt = null;
+    }
+}
+rtcScript();
+setInterval(rtcScript, 2000);</script><style>
+* {
+    -webkit-user-select: auto !important;
+}</style>
+
+
+<body screen_capture_injected="true" class="vsc-initialized">	
+<div id="top">
+    </div>
+    <div style="padding-bottom: 50px">
+        <div id="nav">
+            <div id="logodiv">
+                <img id="logo" style="margin:0;cursor:pointer;href="/"" src="/img/logo96.png">
+            </div>
+            <div id="platypus" class="textColor2">
+                <p style="margin:0;cursor:pointer;">
+                    <a style="href="/"">PLATYPUS LABS</a></p>
+            </div>
+        </div>
+        <div id="welcome" style="z-index:-10;padding-top:80px;" class="fade-in">
+            Privacy Policy
+        </div>
+    </div>
+    <div style="color: #fffff0; text-align: left; margin-left: 3%; margin-right: 3%; font-size:13.5px; font-family: open sans">
+    <p> Platypus Labs LLC built the PPoll - Create Polls app as a Free app. This SERVICE is provided by
+                    Platypus Labs LLC at no cost and is intended for use as is.
+                  </p> <p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure
+                    of Personal Information if anyone decided to use our Service.
+                  </p> <p>If you choose to use our Service, then you agree to the collection and use of information in
+                    relation to this policy. The Personal Information that we collect is used for providing and improving
+                    the Service. We will not use or share your information with anyone except as described
+                    in this Privacy Policy.
+                  </p> <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is
+                    accessible at PPoll - Create Polls unless otherwise defined in this Privacy Policy.
+                  </p> <p><strong style="font-size: 18px">Information Collection and Use</strong></p> <p>For a better experience, while using our Service, we may require you to provide us with certain
+                    personally identifiable information, including but not limited to a randomly generated user id. The information that we request will be retained by us and used as described in this privacy policy.
+                  </p> <p>The app does use third party services that may collect information used to identify you.</p> <div><p>Link to privacy policy of third party service providers used by the app</p> <ul><!----><!----><!----><!----><!----><!----><!----><!----></ul></div> <p><strong style="font-size: 18px">Service Providers</strong></p> <p> We may employ third-party companies and individuals due to the following reasons:</p> <ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p> We want to inform users of this Service that these third parties have access to
+                    your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However,
+                    they are obligated not to disclose or use the information for any other purpose.
+                  </p> <p><strong style="font-size: 18px">Security</strong></p> <p> We value your trust in providing us your Personal Information, thus we are striving
+                    to use commercially acceptable means of protecting it. But remember that no method of transmission over
+                    the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee
+                    its absolute security.
+                  </p> <p><strong style="font-size: 18px">Links to Other Sites</strong></p> <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed
+                    to that site. Note that these external sites are not operated by us. Therefore, we strongly
+                    advise you to review the Privacy Policy of these websites. We have no control over
+                    and assume no responsibility for the content, privacy policies, or practices of any third-party sites
+                    or services.
+                  </p> <p><strong style="font-size: 18px">Children’s Privacy</strong></p> <p>These Services do not address anyone under the age of 13. We do not knowingly collect
+                    personally identifiable information from children under 13. In the case we discover that a child
+                    under 13 has provided us with personal information, we immediately delete this from
+                    our servers. If you are a parent or guardian and you are aware that your child has provided us with personal
+                    information, please contact us so that we will be able to do necessary actions.
+                  </p> <p><strong style="font-size: 18px">Changes to This Privacy Policy</strong></p> <p> We may update our Privacy Policy from time to time. Thus, you are advised to review
+                    this page periodically for any changes. We will notify you of any changes by posting
+                    the new Privacy Policy on this page. These changes are effective immediately after they are posted on
+                    this page.
+                  </p> </div>
+    
+    
+    <div style="width:100%;box-sizing:margin-bottom:32px;padding-top:32px;font-size:12px;text-align:center;line-height:18px;color:#fffffa;font-family:'open sans'">
+        Ad-Free Guarantee: Here at Platypus Labs, we promise to never include ads on any of our products or services. We don't like ads and we know you don't like them either.
+        <br> © 2018 Platypus Labs LLC
+        <br>
+        <a style="color:#fffffa" href="https://twitter.com/platypuslabsllc">Twitter</a> - <a style="color:#fffffa" href="https://www.facebook.com/platypus.labs.1">Facebook</a> - <a style="color:#fffffa" href="https://www.youtube.com/channel/UC0wBafPdGn_UELVvHV03Feg">YouTube</a> - <a style="color:#fffffa" href="https://www.google.com/url?q=https%3A%2F%2Fwww.reddit.com%2Fuser%2Fplatypuslabs&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGd-Vctlrtx2UynChYXBNq8rPQBug">Reddit</a> - <a style="color:#fffffa" href="support@platypus.land">Email</a>
+    </div>
+    <div style="padding: 5px"></div>
+
+
+</body></html>
