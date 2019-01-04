@@ -68,7 +68,7 @@ node_modules/
 ######################
 deployhosting.bat
 addcommitpushgithub.sh
-pullgithub.bat
+pullgithub.sh
 deployhostingpushgithub.bat
 deploynetlify.bat
 
