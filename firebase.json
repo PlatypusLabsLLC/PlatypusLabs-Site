@@ -16,13 +16,13 @@
   "hosting": {
     "public": "public",
     "cleanUrls": "true",
+	"appAssociation": "AUTO",
+	"rewrites": [ { "source": "/**", "dynamicLinks": true } ],
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
-	"appAssociation": "AUTO",
-	"rewrites": [ { "source": "/**", "dynamicLinks": true } ]
   },
   "storage": {
     "rules": "storage.rules"
