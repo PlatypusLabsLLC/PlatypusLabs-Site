@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" >
+<style>
+   body {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login-container {
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.login-container {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  background: linear-gradient(135deg, white 0%, #a3a3a3 100%);
+  background-size: cover;
+  border-bottom: 4px solid white;
+  box-shadow: 0px -4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.form-group-3,
+.form-group-2,
+.form-group-1 {
+  opacity: 0;
+  animation: fadeIn ease 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
+  animation-delay: 0.3s;
+}
+
+.form-group-2 {
+  animation-delay: 0.4s;
+}
+
+.form-group-3 {
+  animation-delay: 0.5s;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  border-width: 0;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.loading-spinner {
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity 0.4s ease, transform 0.2s ease;
+  transition-delay: 0.0s;
+}
+
+.logging-in .loading-spinner {
+  opacity: 1;
+  transform: translateX(0px);
+  transition-delay: 0s;
+}
+
+.logged-in .loading-spinner {
+  transition-delay: 0s;
+  opacity: 0 !important;
+  transform: translateX(-3px) !important;
+}
+
+.logo-container {
+  position: relative;
+  transition: left 0.3s ease;
+  left: 0;
+  transition-delay: 0.3s;
+}
+
+.logged-in .logo-container {
+  left: 65px;
+  transition-delay: 0.3s;
+}
+
+fieldset[disabled] .btn,
+fieldset[disabled] .form-control {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.login-form {
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.minimized {
+  opacity: 0;
+  height: 0 !important;
+}
+
+@keyframes bubble-in {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg);
+  }
+  40% {
+    opacity: 0.8;
+    transform: rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(10deg);
+  }
+}
+@keyframes bubble-out {
+  0% {
+    opacity: 1;
+    transform: rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(20deg);
+  }
+}
+.logged-in #login-success-bubble {
+  animation: bubble-in ease 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
+}
+
+.fadeout #login-success-bubble {
+  opacity: 0;
+  animation: bubble-out ease 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+}
+
+.fadeout {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.logged-in-thing {
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  font-size: 128px;
+  animation: shake 0.01s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-5px);
+  }
+  30% {
+    transform: translateX(5px) translateY(4px) rotate(12deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(-20deg);
+  }
+  60% {
+    transform: translateX(5px) translateY(-4px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+#login-success-bubble {
+  opacity: 0;
+  transform-origin: 4px 40px;
+  position: absolute;
+  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  z-index: 2;
+}
+#login-success-bubble .arrow {
+  z-index: -1;
+  position: absolute;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.alert-danger {
+  opacity: 0;
+  height: 0;
+  transition: all 0.2s ease;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.alert-danger.show-alert {
+  height: 48px;
+  opacity: 1;
+  margin-bottom: 1rem;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+.alert {
+  text-align: left;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.alert.alert-danger {
+  border-width: 0px;
+  border-left: 3px solid red;
+}
+
+.letter-container {
+  position: relative;
+  width: 165px;
+  height: 34px;
+}
+
+@keyframes letter-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-5px) translateY(0px) rotate(9deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(2px) translateY(-3px) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px);
+  }
+}
+@keyframes elastic-up {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+@keyframes elastic-down {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  15% {
+    transform: translateY(20px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.letter {
+  position: absolute;
+}
+
+.slide-in .letter {
+  opacity: 0;
+  animation: letter-slide 0.5s forwards;
+}
+.slide-in .letter-1 {
+  animation-delay: 0.2s;
+}
+.slide-in .letter-2 {
+  animation-delay: 0.3s;
+}
+.slide-in .letter-3 {
+  animation-delay: 0.4s;
+}
+.slide-in .letter-4 {
+  animation-delay: 0.5s;
+}
+.slide-in .letter-5 {
+  animation-delay: 0.6s;
+}
+
+.letter-1 {
+  left: 0;
+  top: 0px;
+}
+
+.letter-2 {
+  top: -4px;
+  left: 35px;
+}
+
+.letter-3 {
+  top: 0px;
+  left: 70px;
+}
+
+.letter-4 {
+  top: 0px;
+  left: 97px;
+}
+
+.letter-5 {
+  top: 0px;
+  left: 124px;
+}
+
+.hiddenCompletely {
+  opacity: 0 !important;
+  animation: none;
+}
+    </style>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="login-container" id="login-container">
+  <form class="form-signin text-center" onsubmit="login(event)" 
+        id="form-signin">
+    <fieldset id="form-fieldset">
+      <div class="d-flex mb-3 justify-content-start logo-container" 
+           id="logo-container">
+        <div id="login-success-bubble">
+          Welcome!
+          <div class="arrow"></div>
+        </div>
+
+        <!-- messy inline images -->
+          <div id="logo" class="letter-container slide-in" style="padding: 200px">
+              
+          </div>
+        <div class="ml-4 text-white d-flex align-items-center loading-spinner"
+             id="loading-spinner">
+          <i class="fas fa-pulse fa-spinner fa-2x"></i>
+        </div>
+      </div>
+
+      <div class="login-form" id="form-container">
+        <div id="form-child">
+          <div class="mb-4">
+            <div class="form-group form-group-1">
+              <label for="inputEmail" class="sr-only">Email</label>
+              <input type="text"
+                     name="username"
+                     id="username"
+                     class="form-control" placeholder="Email/Username" required>
+            </div>
+
+            <div class="form-group form-group-2">
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password"
+                     name="password"
+                     id="password" 
+                     class="form-control" placeholder="Password" required>
+            </div>
+          </div>
+
+          <div class="alert alert-danger" 
+               id="login-error">
+            <i class="fas fa-exclamation-circle"></i> Incorrect Login
+          </div>
+
+          <button class="btn btn-outline-light btn-lg btn-block form-group-3" style="font-weight:600" type="submit">Log in</button>
+          <button class="btn btn-outline-light btn-clear btn-block form-group-3" type="button">Forgot Password?</button>
+
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDcQ8Ul9NrnRexYDzjwLMDJ_RgUZlYsT48",
+    authDomain: "thought-bank-da081.firebaseapp.com",
+    databaseURL: "https://thought-bank-da081.firebaseio.com",
+    projectId: "thought-bank-da081",
+    storageBucket: "thought-bank-da081.appspot.com",
+    messagingSenderId: "465766367294"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+  <script src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js'></script>
+    
+    <script type="text/javascript">
+
+    /**
+     * Handles the sign in button press.
+     */
+
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+    
+    <script>
+var formSignin =
+document.getElementById("login-container");
+
+var formFieldset =
+document.getElementById("form-fieldset");
+
+var logoContainer =
+document.getElementById("logo-container");
+
+var loginSuccessBubble =
+document.getElementById("login-success-bubble");
+
+var formContainer =
+document.getElementById("form-container");
+var formChild =
+document.getElementById("form-child");
+
+var loginError =
+document.getElementById("login-error");
+
+var loadingSpinner =
+document.getElementById("loading-spinner");
+
+
+var usernameField =
+document.getElementById("username");
+var passwordField =
+document.getElementById("password");
+
+
+function showError(show) {
+  loginError.classList.toggle("show-alert", show);
+}
+
+var loggingIn = false;
+var loggedIn = false;
+
+function setLoggingIn(_loggingIn) {
+  loggingIn = _loggingIn;
+  if (loggingIn) {
+    formFieldset.setAttribute("disabled", true);
+  } else {
+    formFieldset.removeAttribute("disabled");
+  }
+
+  formSignin.classList.toggle("logging-in", loggingIn);
+
+
+}
+
+function setLoggedIn(_loggedIn) {
+  loggedIn = _loggedIn;
+
+  formContainer.classList.toggle("minimized", loggedIn);
+  formSignin.classList.toggle("logged-in", loggedIn);
+
+  if (loggedIn) {
+    logoAnimation("elastic-up");
+  }
+}
+
+function checkLogin(username, password) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(
+      username == "username" &&
+      password == "password");
+
+    }, 1000);
+  });
+}
+
+var logo = document.getElementById("logo");
+
+function logoAnimation(name) {
+  logo.classList.add(name);
+  setTimeout(function () {
+    logo.classList.remove(name);
+  }, 1100);
+}
+
+function login(event) {
+  event.preventDefault();
+  showError(false);
+
+  setLoggingIn(true);
+
+  checkLogin(usernameField.value, passwordField.value).
+  then(function (success) {
+
+    if (success) {
+      formContainer.style.height = formChild.offsetHeight + "px";
+
+      setTimeout(function () {
+        setLoggedIn(true);
+      }, 10);
+
+      setTimeout(function () {
+        logoAnimation("fade-out");
+      }, 800);
+
+      // Hide bubble
+      setTimeout(function () {
+        formSignin.classList.add("fadeout");
+      }, 900);
+    }
+
+    if (!success) {
+      setLoggingIn(false);
+      showError(true);
+      usernameField.focus();
+    }
+  });
+}
+
+
+logoAnimation("slide-in");
+    </script>
+</html>

@@ -74,7 +74,6 @@ deploynetlify.bat
 
 # HTML Files #
 ######################
-/public/lor.html
 /public/video.html
 /public/test.html
 /public/pickle.html
