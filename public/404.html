@@ -170,9 +170,17 @@
     <div class="button">GO HOME</div>
 	  </a>
   </div>
-  <div class="sorry">Oops! Sorry, page not found.</div>
+  <div class="sorry" id="dynamic"></div>
 </div>
-	
+	<script>
+        if(window.location.href.substring(window.location.href.length-14,window.location.href.length-6) == "\/verify\/"){
+            document.getElementById("dynamic").innerHTML =
+"Please enter " + window.location.href.substring(window.location.href.length-6) + " into your GetPass app.";
+        } else{
+            document.getElementById("dynamic").innerHTML =
+"Sorry, page not found.";
+        }
+    </script>
  <style>
 * {
   box-sizing: border-box;
@@ -2643,7 +2651,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  font-size: 15px;
+  font-size: 20px;
 }
 @-webkit-keyframes blink {
   0%, 100% {
