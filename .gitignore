@@ -71,6 +71,7 @@ addcommitpushgithub.sh
 pullgithub.sh
 deployhostingpushgithub.bat
 deploynetlify.bat
+everything.bat
 
 # HTML Files #
 ######################
