@@ -29,6 +29,18 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+.clearfix{
+    clear:both
+}
+.mySlides{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:90%
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
 body {
 	line-height: 1;
 }
@@ -2671,7 +2683,7 @@ input, select, textarea {
 				padding: 1em;
 				border-radius: 4px;
 				border-bottom: 0;
-				color: #ffffff;
+				color: white;
 				text-align: center;
 				text-decoration: none;
 				z-index: 3;
@@ -2699,6 +2711,7 @@ input, select, textarea {
 					line-height: 1.5;
 					margin-top: 0.35em;
 					opacity: 0;
+
 				}
 
 					.tiles article > a .content > :last-child {
@@ -2706,15 +2719,15 @@ input, select, textarea {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #f2849e;
+				background-color: #4d4d4d;
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color: #4d4d4d;
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #7bd0c1;
+				background-color: #4d4d4d;
 			}
 
 			.tiles article.style4 > .image:before {
