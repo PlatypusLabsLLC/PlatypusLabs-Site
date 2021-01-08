@@ -1,5 +1,20 @@
 {
   "projects": {
     "default": "platypus-labs-site"
+  },
+  "targets": {
+    "platypus-labs-site": {
+      "hosting": {
+        "platypus-labs-site": [
+          "myapp-blog"
+        ],
+        "main": [
+          "platypus-labs-site"
+        ],
+        "safedish": [
+          "safedish"
+        ]
+      }
+    }
   }
 }

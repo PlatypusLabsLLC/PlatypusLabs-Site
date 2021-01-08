@@ -10,19 +10,35 @@
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run lint"
     ],
+    "runtime": "nodejs12",
     "source": "functions"
   },
-  "hosting": {
-    "public": "public",
-    "cleanUrls": "true",
-	"appAssociation": "AUTO",
-	"rewrites": [ { "source": "/**", "dynamicLinks": false } ],
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+  "hosting": [ {
+    "target": "safedish",
+    "public": "safedish",
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
+    "cleanUrls": "true"
   },
+    {
+      "target": "main",
+      "public": "public",
+      "cleanUrls": "true",
+      "appAssociation": "AUTO",
+      "redirects": [ {
+          "regex": "/safedishapi/(.*)",
+          "destination": "http://3.84.237.249/:1",
+          "type": 301
+      }],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   },
