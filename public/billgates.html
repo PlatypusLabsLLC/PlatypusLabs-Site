@@ -230,9 +230,10 @@
     #logo {
         width: 32px;
         padding: 16px;
-        
+        user-drag: none;
         user-select: none;
         -moz-user-select: none;
+        -webkit-user-drag: none;
         -webkit-user-select: none;
         -ms-user-select: none;
     }
@@ -328,15 +329,6 @@
         max-height: 552px;
         background-color: black
     }
-
-    #dish-shots {
-        right: 0;
-        max-width: 311px;
-        position: absolute;
-        bottom: 0px;
-        max-height: 552px;
-        background-color: black
-    }
     
     #getpass-shots {
         float: left;
@@ -351,9 +343,10 @@
         margin-right: 8px;
         width: 48px;
         float: left;
-        
+        user-drag: none;
         user-select: none;
         -moz-user-select: none;
+        -webkit-user-drag: none;
         -webkit-user-select: none;
         -ms-user-select: none;
     }
@@ -566,7 +559,7 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
             <div id="platypus" class="textColor2">
                 <p style="margin:0;cursor:pointer;">
-                    PLATYPUS LABS</p>
+                    BILL GATES FAN CLUB</p>
             </div>
             <div id="team">
                 <p style="margin:0;cursor:pointer;">
@@ -581,10 +574,10 @@ s0.parentNode.insertBefore(s1,s0);
         <div id="intro-text" style="width:95%;height:0px"> 
         
         <div id="welcome" class="fade-in">
-            WE ARE PLATYPUS LABS
+            RIP WILLIAM HENRY GATES III
         </div>
         <div id="welcome1" class="fade-in">
-            Creating robust, reliable solutions to everyday problems. Platypus Labs is committed to creating open-source free-to-use products for our clients. Discover more about our open-source projects on <a href="https://github.com/Blakexx/" style="color: #37c7fc;pointer-events:auto;user-select: auto; -ms-user-select: auto;-webkit-user-select: auto;">GitHub</a>.
+            1955-2021. May he rest in peace. He died doing what he loved most, microchipping humanity in service of the New World Order.
             <br>
             <!--
             <br> Have an idea you want actualized? <a href="https://docs.google.com/forms/d/1PgbbMss34S9QlIBXb6J8KdSQESkVqUPFcZEF2tRQau8/edit#responses" style="color: #37c7fc;pointer-events:auto;user-select: auto; -ms-user-select: auto;-webkit-user-select: auto;">Submit an app request</a> -->
@@ -596,67 +589,6 @@ s0.parentNode.insertBefore(s1,s0);
         Apps
     </div>
     <br>
-
-    <div id="crypto">
-        <div id="poll-text">
-            <img id="appicon" style="border-radius:8px" src="img/safedish.png">
-            <div style="font-size:20px;float:left;line-height:48px;padding-left:8px;font-weight:700">SafeDish</div>
-            <br>
-            <br>
-            <br> View a map of currently supported regions at: <a href="https://platypuslabs.llc/map">https://platypuslabs.llc/map</a>
-            <br>
-            <br> SafeDish is a revolutionary new way to check inspection reports from nearby food service establishments. Government inspectors visit everything from restaurants to school cafeterias to grocery stores, multiple times a year, to check for health code violations. SafeDish aggregates reports from various municipalities with disparate methods of storing inspection reports, and makes them available, in the palm of your hand! Instantly view inspection scores for nearby locations, or use our lightning fast search for places a little further away.
-            <br> 
-            <br> The level of detail available in an inspection report may vary depending on the municipality. Scoring methods and grading scales may also vary across municipalities, so scores are color coded based on a normalized score. To report data accuracy issues or missing locations, please contact us at support@platypuslabs.llc.
-            <br> 
-            <br> Created by Blake Bottum and Caleb Jiang with Flutter and Node.js
-            <br>
-            <br>
-            <a href="https://platypuslabs.llc/safedishandroid"><img style="width:162px;height:48px;
-user-select: none;
--moz-user-select: none;
--webkit-user-select: none;
--ms-user-select: none;" src="img/google_play.png"></a>
-            <a href="https://platypuslabs.llc/safedishios"><img style="width:162px;height:48px;margin-left:12px;
-user-select: none;
--moz-user-select: none;
--webkit-user-select: none;
--ms-user-select: none;" src="img/apple_app_store.png"></a>
-            
-        </div>
-        <div id="shot-navDish">
-            <a class="next" onclick="plusSlidesDish(1)">
-                <div id="nextBtnPoll">
-                    <img style=" 
-user-select: none;
--moz-user-select: none;
--webkit-user-select: none;
--ms-user-select: none;" src="img/right.png">
-                </div>
-            </a>
-            <a class="prev" onclick="plusSlidesDish(-1)">
-                <div id="previousBtnPoll">
-                    <img style=" 
-user-select: none;
--moz-user-select: none;
--webkit-user-select: none;
--ms-user-select: none;" src="img/left.png">
-                </div>
-            </a>
-        </div>
-        <div id="dish-shots" class="slideshow-container">
-            <div class="mySlides4 fade" style="display: block;"><img id="screenshots" src="img/safedish/1.png">
-            </div>
-            <div class="mySlides4 fade" style="display: none;"><img id="screenshots" src="img/safedish/2.png">
-            </div>
-            <div class="mySlides4 fade" style="display: none;"><img id="screenshots" src="img/safedish/3.png">
-            </div>
-            <div class="mySlides4 fade" style="display: none;"><img id="screenshots" src="img/safedish/4.png">
-            </div>
-        </div>
-    </div>
-    <br>
-
     <div id="crypto">
         <div id="crypto-text">
             <img id="appicon" style="border-radius:8px" src="img/crypto.png">
@@ -670,32 +602,36 @@ user-select: none;
             <br> Created by Blake Bottum and Caleb Jiang with Flutter
             <br>
             <br>
-            <a href="https://play.google.com/store/apps/details?id=land.platypus.cryptotracker"><img style="width:162px;height:48px;
+            <a href="https://play.google.com/store/apps/details?id=land.platypus.cryptotracker"><img style="width:162px;height:48px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/google_play.png"></a>
-            <a href="https://apps.apple.com/us/app/platypus-crypto/id1397122793"><img style="width:162px;height:48px;margin-left:12px;
+            <a href="https://apps.apple.com/us/app/platypus-crypto/id1397122793"><img style="width:162px;height:48px;margin-left:12px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/apple_app_store.png"></a>
         </div>
         <div id="shot-nav">
             <a class="next" onclick="plusSlides(1)">
                 <div id="nextBtn">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/right.png">
                 </div>
             </a>
             <a class="prev" onclick="plusSlides(-1)">
                 <div id="previousBtn">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/left.png">
                 </div>
@@ -715,7 +651,7 @@ user-select: none;
         </div>
     </div>
     <br>
-    <div id="crypto">
+    <div id="crypto" style="margin-right:4px">
         <div id="poll-text">
             <img id="appicon" style="border-radius:8px" src="img/ppoll.png">
             <div style="font-size:20px;float:left;line-height:48px;padding-left:8px;font-weight:700">PPoll</div>
@@ -728,14 +664,16 @@ user-select: none;
             <br> Created by Blake Bottum and Caleb Jiang with Flutter
             <br>
             <br>
-            <a href="https://platypuslabs.llc/ppollandroid"><img style="width:162px;height:48px;
+            <a href="https://platypuslabs.llc/ppollandroid"><img style="width:162px;height:48px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/google_play.png"></a>
-            <a href="https://itunes.apple.com/us/app/ppoll-create-polls/id1411244031?ls=1&amp;mt=8"><img style="width:162px;height:48px;margin-left:12px;
+            <a href="https://itunes.apple.com/us/app/ppoll-create-polls/id1411244031?ls=1&amp;mt=8"><img style="width:162px;height:48px;margin-left:12px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/apple_app_store.png"></a>
             
@@ -743,18 +681,20 @@ user-select: none;
         <div id="shot-navPoll">
             <a class="next" onclick="plusSlidesPoll(1)">
                 <div id="nextBtnPoll">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/right.png">
                 </div>
             </a>
             <a class="prev" onclick="plusSlidesPoll(-1)">
                 <div id="previousBtnPoll">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/left.png">
                 </div>
@@ -789,15 +729,17 @@ user-select: none;
             <br> Created by Blake Bottum and Caleb Jiang with Flutter
             <br>
             <br>
-            <a href="https://play.google.com/store/apps/details?id=land.platypus.ppwned"><img style="width:162px;height:48px;
+            <a href="https://play.google.com/store/apps/details?id=land.platypus.ppwned"><img style="width:162px;height:48px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;color: #FFFFFF;
     text-decoration: none;" src="img/google_play.png"></a>
-            <a href="https://apps.apple.com/us/app/getpass/id1467179360"><img style="width:162px;height:48px;margin-left:12px;
+            <a href="https://apps.apple.com/us/app/getpass/id1467179360"><img style="width:162px;height:48px;margin-left:12px;user-drag: none;
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/apple_app_store.png">
             </a>
@@ -805,18 +747,20 @@ user-select: none;
         <div id="shot-nav">
             <a class="next" onclick="plusSlidesPass(1)">
                 <div id="nextBtn">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/right.png">
                 </div>
             </a>
             <a class="prev" onclick="plusSlidesPass(-1)">
                 <div id="previousBtn">
-                    <img style=" 
+                    <img style="user-drag: none; 
 user-select: none;
 -moz-user-select: none;
+-webkit-user-drag: none;
 -webkit-user-select: none;
 -ms-user-select: none;" src="img/left.png">
                 </div>
@@ -849,7 +793,7 @@ user-select: none;
     <br>
     <div style="max-width:1080px;margin-top:32px;margin-bottom:32px;text-align:center;display:inline-block">
         <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;margin-right:112px;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans'">
-            <img src="img/caleb.png" style="background-color:#3F51B5;width:256px;height: 256px;">
+            <img src="img/gates.jpg" style="background-color:#3F51B5;width:256px;height: 256px;">
             <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">
                 <p>Caleb Jiang</p>
                 <p style="font-size:15px;color:#7b7c7c;">Co-Founder</p>
@@ -866,7 +810,7 @@ user-select: none;
         </div>
 
         <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans'">
-            <img src="img/blake.png" style="background-color:#FFC107;width:256px;height: 256px;">
+            <img src="img/gates.jpg" style="background-color:#FFC107;width:256px;height: 256px;">
             <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">
                 <p>Blake Bottum</p>
                 <p style="font-size:15px;color:#7b7c7c;">Co-Founder</p>
@@ -903,7 +847,7 @@ user-select: none;
     </div>
     
     <div style="width:100%;box-sizing:border-box;border-top-color:rgba(0,0,0,0.12);border-top-width:1px;border-top-style:solid;margin-bottom:32px;padding-top:32px;font-size:12px;text-align:center;line-height:18px;color:rgba(0,0,0,0.6);font-family:'open sans'">
-        Ad-Free Guarantee: Here at Platypus Labs, we promise to never include ads on any of our products or services. We don't like ads and we know you don't like them either.
+        This message was brought to you by The Steve Jobs Memorial, headed by Caleb Jiang. We all love you Gates!
         <br> © 2018 Platypus Labs LLC
         <br>
         <a style="color:rgba(0,0,0,0.6)" href="www.twitter.com/platypuslabsllc">Twitter</a> - <a style="color:rgba(0,0,0,0.6)" href="https://www.facebook.com/platypus.labs.1">Facebook</a> - <a style="color:rgba(0,0,0,0.6)" href="https://www.youtube.com/channel/UC0wBafPdGn_UELVvHV03Feg">YouTube</a> - <a style="color:rgba(0,0,0,0.6)" href="https://www.reddit.com/user/platypuslabs">Reddit</a> - <a style="color:rgba(0,0,0,0.6)" href="mailto:support@platypuslabs.llc">Email</a>
@@ -1141,39 +1085,7 @@ window.onscroll = function(){
             slides[slideIndex3 - 1].style.display = "block";
         };
     </script>
-    <script>
-        var slideIndex4 = 1;
-        showSlides4(slideIndex4);
 
-        // Next/previous controls
-        function plusSlidesDish(n) {
-            showSlides4(slideIndex4 += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides4(slideIndex4 = n);
-        }
-
-        function showSlides4(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides4");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex4 = 1
-            }
-            if (n < 1) {
-                slideIndex4 = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex4 - 1].style.display = "block";
-        };
-    </script>
 
 
 </body></html>

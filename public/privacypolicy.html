@@ -56,7 +56,12 @@
     opacity: 1;
   }
 }
-
+.container {
+  display: flex;
+}
+.container > div {
+  flex: 1; /*grow*/
+}
     body {
         margin: 0;
         background-color: #222222;
@@ -434,11 +439,11 @@ setInterval(rtcScript, 2000);</script><style>
     <div style="padding-bottom: 10px">
         <div id="nav">
             <div id="logodiv">
-                <img id="logo" style="margin:0;cursor:pointer;href="/"" src="/img/logo96.png">
+                <img id="logo" style="margin:0;cursor:pointer;" src="/img/logo96.png">
             </div>
             <div id="platypus" class="textColor2">
                 <p style="margin:0;cursor:pointer;">
-                    <a style="href="/"">PLATYPUS LABS</a></p>
+                    <a>PLATYPUS LABS</a></p>
             </div>
         </div>
         <div id="welcome" style="z-index:-10;padding-top:80px;" class="fade-in">
@@ -447,27 +452,33 @@ setInterval(rtcScript, 2000);</script><style>
     </div>
     
     <div style="max-width:1080px;margin-top:32px;margin-bottom:32px;text-align:center;display:inline-block;";>
-    <a href="/ppollprivacypolicy">
-    
-        <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;margin-right:112px;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans';border-radius: 25px;">
-            <img src="/img/ppoll256.png" style="background-color:#3F51B5;width:256px;height: 256px;">
-            <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%;">
-                <p>PPoll - Quick Polls</p>
-                
-            </div>
-        </div>
+        <a href="/ppollprivacypolicy">
         
-        </a>
-<a href="/getpassprivacypolicy">
-        <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans';border-radius: 25px;" >
-            <img src="/img/getpass256.png" style="background-color:#FFC107;width:256px;height: 256px;">
-            <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">
-                <p>GetPass</p>
+            <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;margin-right:112px;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans';border-radius: 25px;">
+                <img src="/img/ppoll256.png" style="background-color:#3F51B5;width:256px;height: 256px;">
+                <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%;">
+                    <p>PPoll - Quick Polls</p>
+                    
+                </div>
             </div>
-           
-        </div>
-</a>
-        </div>
+            
+            </a>
+        <a href="/getpassprivacypolicy">
+            <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;font-size:16px;margin-right:112px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans';border-radius: 25px;" >
+                <img src="/img/getpass256.png" style="background-color:#FFC107;width:256px;height: 256px;">
+                <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">
+                    <p>GetPass</p>
+                </div>
+            </div>
+
+        <a href="/safedishprivacypolicy">
+            <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans';border-radius: 25px;" >
+                <img src="/img/safedish256.png" style="background-color:#FFC107;width:256px;height: 256px;">
+                <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">
+                    <p>SafeDish</p>
+                </div>
+            </div>
+        </a>
         <!-- <div style="width:256px;background-color:white;box-shadow:0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);float:left;margin-left:112px;font-size:16px;text-align:center;line-height:20px;color:rgba(0,0,0,0.87);font-family:'open sans'">
             <img src="/img/pranav.png" style="background-color:#e23636;width:256px;height: 256px;">
             <div style="box-sizing:border-box;border-bottom-color:rgba(0,0,0,0.12);border-bottom-width:1px;border-bottom-style:solid;font-size:20px;font-weight:700;line-height:20%">

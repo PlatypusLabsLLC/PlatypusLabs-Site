@@ -13,29 +13,45 @@
     "runtime": "nodejs12",
     "source": "functions"
   },
-  "hosting": [ {
-    "target": "safedish",
-    "public": "safedish",
-    "rewrites": [ {
-      "source": "**",
-      "destination": "/index.html"
-    } ],
-    "cleanUrls": "true"
-  },
+  "hosting": [
+    {
+      "target": "safedish",
+      "public": "safedish",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "cleanUrls": "true"
+    },
     {
       "target": "main",
       "public": "public",
       "cleanUrls": "true",
       "appAssociation": "AUTO",
-      "redirects": [ {
+      "redirects": [
+        {
           "regex": "/safedishapi/(.*)",
-          "destination": "http://3.84.237.249/:1",
+          "destination": "http://54.237.105.43/:1",
           "type": 301
-      }],
+        }
+      ],
       "ignore": [
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        }
       ]
     }
   ],
@@ -57,6 +73,12 @@
     },
     "pubsub": {
       "port": 8085
+    },
+    "auth": {
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true
     }
   }
 }

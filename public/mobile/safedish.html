@@ -46,17 +46,29 @@
                             <li><a href="/mobile/safedish.html">SafeDish</a></li>
 							<li><a href="/mobile/crypto.html">Platypus Crypto</a></li>
 							<li><a href="/mobile/ppoll.html">PPoll</a></li>
-							<li><a href="/mobile/getpass.html">GetPass</a></li>
+                            <li><a href="/mobile/getpass.html">GetPass</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+							<h1>SafeDish</h1>
+							<br> View a map of currently supported regions at: <a href="https://platypuslabs.llc/map">https://platypuslabs.llc/map</a>
+                            <br>
+                            <br> SafeDish is a revolutionary new way to check inspection reports from nearby food service establishments. Government inspectors visit everything from restaurants to school cafeterias to grocery stores, multiple times a year, to check for health code violations. SafeDish aggregates reports from various municipalities with disparate methods of storing inspection reports, and makes them available, in the palm of your hand! Instantly view inspection scores for nearby locations, or use our lightning fast search for places a little further away.
+                            <br> 
+                            <br> The level of detail available in an inspection report may vary depending on the municipality. Scoring methods and grading scales may also vary across municipalities, so scores are color coded based on a normalized score. To report data accuracy issues or missing locations, please contact us at support@platypuslabs.llc.
+                            <br> 
+                            <br> Created by Blake Bottum and Caleb Jiang with Flutter and Node.js
+                            <br>
+                            <br>
 			                            
-                            <button id="btn">Open PhotoSwipe</button>
+                            <button id="btn" style="font-family:inherit;font-size: 90%"><b>View screenshots</b></button>
+                                <br>
+                           
+                            <br>
+                                <a href="../downloadsafedish.html" class="button primary icon solid fa-download">Download</a>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -170,14 +182,24 @@ var openPhotoSwipe = function() {
     // build items array
     var items = [
         {
-            src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-            w: 964,
-            h: 1024
+            src: "/src/safedish/1.png",
+            w: 1242,
+            h: 2208
         },
         {
-            src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-            w: 1024,
-            h: 683
+            src: "/src/safedish/2.png",
+            w: 1242,
+            h: 2208
+        },
+        {
+            src: "/src/safedish/3.png",
+            w: 1242,
+            h: 2208
+        },
+        {
+            src: "/src/safedish/4.png",
+            w: 1242,
+            h: 2208
         }
     ];
     
