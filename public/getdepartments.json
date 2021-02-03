@@ -142,5 +142,21 @@
                 "lat": 40.71341,
                 "long": -74.007523
         }
+        },
+        {
+                "depId": "usa/ny/nyc/manhat",
+                "avgPoint": {
+                        "lat": 40.754442,
+                        "long": -73.98148
+                },
+                "range": 13.21,
+                "minPoint": {
+                        "lat": 40.641311,
+                        "long": -74.019689
+                },
+                "maxPoint": {
+                        "lat": 40.904441,
+                        "long": -73.778139
+                }
         }
 ]
