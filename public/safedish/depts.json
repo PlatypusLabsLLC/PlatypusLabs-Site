@@ -1,0 +1,137 @@
+{
+	"code": 200,
+	"data": [
+		{
+			"depId": "usa/ga/gwhd",
+			"name": "Gwinnett, Newton & Rockdale Health",
+			"source": "https://inspections.myhealthdepartment.com/gwinnett",
+			"updated": "2021-02-14T22:33:08.723Z",
+			"lat": 33.8310272,
+			"long": -84.0304691,
+			"range": 30.99,
+			"scoring": "https://platypuslabs.llc/safescore",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/il/chd",
+			"name": "Chicago Health & Human Services",
+			"source": "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/",
+			"updated": "2021-02-15T04:33:29.513Z",
+			"lat": 41.87873456,
+			"long": -87.67730619,
+			"range": 31.75,
+			"scoring": "https://platypuslabs.llc/safedish/safescore",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/ny/nyc",
+			"name": "NYC Health",
+			"source": "https://a816-health.nyc.gov/ABCEatsRestaurants",
+			"updated": "2021-02-14T15:33:40.273Z",
+			"lat": 40.72867076,
+			"long": -73.94399702,
+			"range": 22.08,
+			"scoring": "https://a816-health.nyc.gov/ABCEatsRestaurants#/faq",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tn/tnhd",
+			"name": "Tennessee Department of Health",
+			"source": "https://inspections.myhealthdepartment.com/tennessee",
+			"updated": "2021-02-14T16:27:27.753Z",
+			"lat": 35.86159026,
+			"long": -86.20948763,
+			"range": 254.92,
+			"scoring": "https://www.tn.gov/health/cedep/environmental/healthy-places/healthy-places/environmental-quality/eq/health-inspections.html",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/aod",
+			"name": "City of Arlington's Health Services",
+			"source": "https://data-arlingtontx.opendata.arcgis.com/datasets/food-establishments",
+			"updated": "2021-02-15T00:30:08.970Z",
+			"lat": 32.7105487,
+			"long": -97.11250905,
+			"range": 7.79,
+			"scoring": "https://www.arlingtontx.gov/city_hall/departments/planning_development_services/health_services/food_inspection_program",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/aushd",
+			"name": "City of Austin's Health Services",
+			"source": "https://data.austintexas.gov/Health-and-Community-Services/Food-Establishment-Inspection-Scores/ecmv-9xxi/data",
+			"updated": "2021-02-18T00:52:23.410Z",
+			"lat": 30.31282783,
+			"long": -97.74996395,
+			"range": 26.47,
+			"scoring": "https://www.austintexas.gov/department/food-protection",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/dod",
+			"name": "Dallas County Health and Human Services",
+			"source": "https://www.dallasopendata.com/City-Services/Restaurant-and-Food-Establishment-Inspections-Octo/dri5-wcct",
+			"updated": "2021-02-17T01:55:35.153Z",
+			"lat": 32.81787585,
+			"long": -96.79654313,
+			"range": 16.27,
+			"scoring": "https://dallascityhall.com/departments/codecompliance/Pages/FoodSafety.aspx",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/fwhd",
+			"name": "Fort Worth Consumer Health",
+			"source": "https://inspections.myhealthdepartment.com/fort-worth-texas",
+			"updated": "2021-02-15T00:30:24.133Z",
+			"lat": 32.75563408,
+			"long": -97.33635024,
+			"range": 20.46,
+			"scoring": "https://inspections.myhealthdepartment.com/tarrant/about-scores",
+			"safeScore": "normScore"
+		},
+		{
+			"depId": "usa/tx/nrhhd",
+			"name": "NRH Neighborhood Services",
+			"source": "https://www.nrhtx.com/184/Restaurant-Scores",
+			"updated": "2021-02-15T00:30:10.110Z",
+			"lat": 32.86376911,
+			"long": -97.20296939,
+			"range": 3.28,
+			"scoring": "https://www.nrhtx.com/184/Restaurant-Scores",
+			"safeScore": "normScore"
+		},
+		{
+			"depId": "usa/tx/phd",
+			"name": "Plano Health Department",
+			"source": "https://ecop.plano.gov/restaurantscores",
+			"updated": "2021-02-15T00:30:09.187Z",
+			"lat": 33.04739859,
+			"long": -96.760475,
+			"range": 14.46,
+			"scoring": "https://www.plano.gov/334/Food-Restaurant-Inspections",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/richhd",
+			"name": "City of Richardson Health Department",
+			"source": "https://discovery.cor.gov/public/health/healthtrak.nsf/WebScores?openview",
+			"updated": "2021-02-15T00:30:13.390Z",
+			"lat": 32.96583288,
+			"long": -96.72164376,
+			"range": 6.68,
+			"scoring": "https://discovery.cor.gov/public/health/healthtrak.nsf/RestaurantScores.xsp",
+			"safeScore": "dispScore"
+		},
+		{
+			"depId": "usa/tx/thd",
+			"name": "Tarrant County Public Health",
+			"source": "https://inspections.myhealthdepartment.com/tarrant",
+			"updated": "2021-02-15T00:30:33.410Z",
+			"lat": 32.79491041,
+			"long": -97.23130145,
+			"range": 30.06,
+			"scoring": "https://inspections.myhealthdepartment.com/tarrant/about-scores",
+			"safeScore": "normScore"
+		}
+	]
+}

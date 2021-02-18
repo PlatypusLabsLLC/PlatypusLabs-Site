@@ -1,0 +1,512 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126009897-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126009897-1');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Platypus Labs</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+    /* ---- reset ---- */
+    body {
+        margin: 0;
+        font: normal 75% Arial, Helvetica, sans-serif;
+    }
+
+    canvas {
+        display: block;
+        vertical-align: bottom;
+    }
+
+    /* ---- particles.js container ---- */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        background-color: #000000;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .fade-in {
+        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
+    @-webkit-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    body {
+        margin: 0;
+        background-color: #222222;
+        text-align: center
+    }
+
+    #nav {
+        top: 0px;
+        width: 100%;
+        z-index: 4;
+        opacity: .95
+    }
+
+    @keyframes fadeToColor {
+        from {
+            background-color: transparent;
+        }
+
+        to {
+            background-color: #1f2128;
+        }
+    }
+
+    @keyframes fadeToWhite {
+        from {
+            background-color: #1f2128;
+        }
+
+        to {
+            background-color: transparent;
+        }
+    }
+
+    .animateToColor {
+        animation-name: fadeToColor;
+        animation-duration: 400ms;
+    }
+
+    .animateToWhite {
+        animation-name: fadeToWhite;
+        animation-duration: 400ms;
+    }
+
+    @keyframes fadeToGold {
+        from {
+            color: white;
+        }
+
+        to {
+            color: #cea964;
+        }
+    }
+
+    @keyframes fadeToDef {
+        from {
+            color: #cea964;
+        }
+
+        to {
+            color: white;
+        }
+    }
+
+    .animateToGold {
+        animation-name: fadeToGold;
+        animation-duration: 400ms;
+    }
+
+    .animateToDef {
+        animation-name: fadeToDef;
+        animation-duration: 400ms;
+    }
+
+    .color1 {
+        background-color: #1f2128;
+    }
+
+    .color2 {
+        background-color: transparent;
+    }
+
+    .textColor1 {
+        color: black;
+    }
+
+    .textColor2 {
+        color: white;
+    }
+
+    .textColor3 {
+        color: #cea964;
+    }
+
+    #apps {
+        text-align: center;
+        float: right;
+        padding-left: 16px;
+        padding-right: 16px;
+        line-height: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        color: white;
+        font-family: 'open sans';
+        font-size: 16px;
+    }
+
+    #welcome {
+        color: #fffff0;
+        font-family: 'open sans';
+        font-size: 70px;
+        font-weight: 700;
+        margin-left: inherit;
+        margin-right: inherit;
+    }
+
+    #welcome1 {
+        text-align: center;
+        width: 100%;
+        color: white;
+        font-family: 'open sans';
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+    #team {
+        text-align: center;
+        float: right;
+        padding-left: 16px;
+        padding-right: 32px;
+        line-height: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        color: white;
+        font-family: 'open sans';
+        font-size: 16px;
+    }
+
+    #platypus {
+        text-align: center;
+        float: left;
+        padding-left: 0px;
+        padding-right: 16px;
+        line-height: 64px;
+        letter-spacing: 1px;
+        font-family: roboto;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    #logodiv {
+        float: left;
+        width: 64px;
+        height: 64px
+    }
+
+    #logo {
+        width: 32px;
+        padding: 16px;
+        user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    #header-apps {
+        margin-top: 32px;
+        display: inline-block;
+        line-height: 32px;
+        max-width: 960px;
+        color: rgba(0, 0, 0, 0.6);
+        font-family: 'open sans';
+        font-size: 32px;
+        text-align: center
+    }
+
+    #header-team {
+        margin-top: 32px;
+        display: inline-block;
+        line-height: 32px;
+        max-width: 960px;
+        color: rgba(0, 0, 0, 0.6);
+        font-family: 'open sans';
+        font-size: 32px;
+        text-align: center
+    }
+
+    #crypto {
+        position: relative;
+        margin-top: 32px;
+        display: inline-block;
+        max-width: 960px;
+        background-color: white;
+        box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+        height: 600px
+    }
+
+    #crypto-text {
+        float: right;
+        padding-left: 326px;
+        max-width: 650px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: 'open sans';
+        text-align: left
+    }
+
+    table td {
+        border-left: 1px solid #fffffa;
+    }
+
+    #appicon {
+        margin-right: 8px;
+        width: 48px;
+        float: left;
+    }
+
+    #shot-nav {
+        box-sizing: border-box;
+        border-right-color: rgba(0, 0, 0, 0.12);
+        border-right-width: 1px;
+        border-right-style: solid;
+        max-width: 310px;
+        height: 48px;
+    }
+
+    #shot-navPoll {
+        padding-right: 310px;
+        right: 0;
+        position: absolute;
+        box-sizing: border-box;
+        border-left-color: rgba(0, 0, 0, 0.12);
+        border-left-width: 1px;
+        border-left-style: solid;
+        max-width: 311px;
+        height: 48px;
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: 0.5
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.5
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    input {
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        border: 0;
+        height: 24px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-family: 'open sans'
+    }
+
+    button {
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: #3F51B5;
+        border: 0;
+        color: white;
+        font-family: 'open sans';
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        border-radius: 2px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    button:hover {
+        opacity: 0.9;
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+        transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .28s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    tr {
+        color: #fffff0;
+        text-align: left;
+        font-size: 13.5px;
+        font-family: open sans;
+        border-collapse: collapse;
+        border: 1px solid white;
+        width: 50%;
+        align-self: center;
+        align-content: center;
+    }
+</style>
+<link type="text/css" rel="stylesheet" href="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/style.css">
+<script type="text/javascript" charset="utf-8"
+    src="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/js/page_context.js"></script>
+<script type="text/javascript">
+    function rtcScript() {
+        document.oncontextmenu = null;
+        document.onselectstart = null;
+        document.onmousedown = null;
+        document.onclick = null;
+        document.oncopy = null;
+        document.oncut = null;
+        var elements = document.getElementsByTagName('*');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].oncontextmenu = null;
+            elements[i].onselectstart = null;
+            elements[i].onmousedown = null;
+            elements[i].oncopy = null;
+            elements[i].oncut = null;
+        }
+        function preventShareThis() {
+            document.getSelection = window.getSelection = function () {
+                return { isCollapsed: true };
+            }
+        }
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            if (scripts[i].src.indexOf('w.sharethis.com') > -1) {
+                preventShareThis();
+            }
+        }
+        if (typeof Tynt != 'undefined') {
+            Tynt = null;
+        }
+    }
+    rtcScript();
+    setInterval(rtcScript, 2000);</script>
+<style>
+    * {
+        -webkit-user-select: auto !important;
+    }
+</style>
+
+
+<body screen_capture_injected="true" class="vsc-initialized">
+    <div id="top">
+    </div>
+    <div style="padding-bottom: 50px">
+        <div id="nav">
+            <div id="logodiv">
+                <img id="logo" style="margin:0;cursor:pointer;" src="/img/logo96.png">
+            </div>
+            <div id="platypus" class="textColor2">
+                <p style="margin:0;cursor:pointer;">
+                    <a>PLATYPUS LABS</a>
+                </p>
+            </div>
+        </div>
+        <div id="welcome" style="z-index:-10;padding-top:80px;" class="fade-in">
+            SafeDish Sources
+        </div>
+    </div>
+    <div
+        style="color: #fffff0; text-align: left; margin-left: 3%; margin-right: 3%; font-size:13.5px; font-family: open sans">
+
+        <table id="myTable"
+            style="color: #fffff0; text-align: left; font-size:13.5px; font-family: open sans;border-collapse:collapse;border: 1px solid white;width: 50%;align-self:center;align-content: center;">
+
+        </table>
+    </div>
+    </div>
+
+
+    <div
+        style="width:100%;margin-bottom:32px;padding-top:32px;font-size:12px;text-align:center;line-height:18px;color:#fffffa;font-family:'open sans'">
+        Ad-Free Guarantee: Here at Platypus Labs, we promise to never include ads on any of our products or services. We
+        don't like ads and we know you don't like them either.
+        <br> © 2018 Platypus Labs LLC
+        <br>
+        <a style="color:#fffffa" href="https://twitter.com/platypuslabsllc">Twitter</a> - <a style="color:#fffffa"
+            href="https://www.facebook.com/platypus.labs.1">Facebook</a> - <a style="color:#fffffa"
+            href="https://www.youtube.com/channel/UC0wBafPdGn_UELVvHV03Feg">YouTube</a> - <a style="color:#fffffa"
+            href="https://www.google.com/url?q=https%3A%2F%2Fwww.reddit.com%2Fuser%2Fplatypuslabs&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGd-Vctlrtx2UynChYXBNq8rPQBug">Reddit</a>
+        - <a style="color:#fffffa" href="support@platypus.land">Email</a>
+    </div>
+    <div style="padding: 5px"></div>
+    <script>
+        var table = document.getElementById("myTable");
+
+        fetch("/safedish/depts.json").then(response => response.json()).then(res => {
+            res = res.data;
+            res.forEach(dep => {
+                addToTable(dep.name, dep.source);
+            });
+            addToTable("Agency Name", "Link to Data Source");
+        });
+
+        function addToTable(a, b) {
+            var row = table.insertRow(0);
+
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+
+            // Add some text to the new cells:
+            cell1.innerHTML = a;
+            cell2.innerHTML = b;
+        }
+    </script>
+
+</body>
+
+</html>

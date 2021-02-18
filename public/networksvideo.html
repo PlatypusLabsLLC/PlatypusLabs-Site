@@ -1,3 +1,195 @@
-<script type="text/javascript">
-window.location="https:\/\/google.com\/";
-</script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SafeDish Cities</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://bl.ocks.org/christophermanning/raw/4450188/javascript.util.min.js"></script>
+    <script type="text/javascript" src="https://bl.ocks.org/christophermanning/raw/4450188/jsts.min.js"></script>
+    <script type="text/javascript" src="https://arthur-e.github.io/Wicket/wicket.js"></script>
+    <script type="text/javascript" src="https://arthur-e.github.io/Wicket/wicket-gmap3.js"></script>
+
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+        #map_canvas {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <body>
+        <div id="map_canvas"></div>
+    </body>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+        $(document).ready(function () {
+
+            function UseWicketToGoFromGooglePolysToWKT(poly1, poly2) {
+                var wicket = new Wkt.Wkt();
+
+                wicket.fromObject(poly1);
+                var wkt1 = wicket.write();
+
+                wicket.fromObject(poly2);
+                var wkt2 = wicket.write();
+
+                return [wkt1, wkt2];
+            }
+
+            function UseJstsToDissolveGeometries(wkt1, wkt2) {
+                // Instantiate JSTS WKTReader and get two JSTS geometry objects
+                var wktReader = new jsts.io.WKTReader();
+                var geom1 = wktReader.read(wkt1);
+                var geom2 = wktReader.read(wkt2);
+
+                // In JSTS, "union" is synonymous with "dissolve"
+                var dissolvedGeometry = geom1.union(geom2);
+
+                // Instantiate JSTS WKTWriter and get new geometry's WKT
+                var wktWriter = new jsts.io.WKTWriter();
+                var wkt = wktWriter.write(dissolvedGeometry);
+
+                // Use Wicket to ingest the new geometry's WKT
+                var wicket = new Wkt.Wkt();
+                wicket.read(wkt);
+
+                // Assemble your new polygon's options, I used object notation
+                var polyOptions = {
+                    strokeColor: '#1E90FF',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#1E90FF',
+                    fillOpacity: 0.35
+                };
+
+                // Let wicket return a Google Polygon with the options you set above
+                var newPoly = wicket.toObject(polyOptions);
+
+                polygon1.setMap(null);
+                polygon2.setMap(null);
+                newPoly.setMap(map);
+            }
+
+
+            var mapOptions = {
+                zoom: 8.5,
+                center: { lat: 31.6, lng: -97.550712 },
+                mapTypeId: "terrain"
+            };
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+
+            var coords = [
+                new google.maps.LatLng(37.686172, -122.20929),
+                new google.maps.LatLng(37.686172, -121.40929),
+                new google.maps.LatLng(36.886172, -121.40929),
+                new google.maps.LatLng(36.886172, -122.20929),
+                new google.maps.LatLng(37.686172, -122.20929)
+            ];
+
+            var coords2 = [
+                new google.maps.LatLng(37.486172, -121.5),
+                new google.maps.LatLng(37.086172, -121.5),
+                new google.maps.LatLng(37.086172, -121),
+                new google.maps.LatLng(37.486172, -121),
+                new google.maps.LatLng(37.486172, -121.00929)
+            ];
+
+            var polygon1 = new google.maps.Polygon({
+                paths: [coords],
+                strokeColor: '#000000',
+                strokeOpacity: 0.8,
+                strokeWeight: 1,
+                fillColor: '#00FF00',
+                fillOpacity: 0.35
+            });
+
+            var polygon2 = new google.maps.Polygon({
+                paths: [coords2],
+                strokeColor: '#000000',
+                strokeOpacity: 0.8,
+                strokeWeight: 1,
+                fillColor: '#0000FF',
+                fillOpacity: 0.35
+            });
+
+            polygon1.setMap(map);
+            polygon2.setMap(map);
+
+
+            var latLngArr = [];
+            function DoEverything() {
+                fetch("/getdepartments.json").then(response => response.json()).then(res => {
+                    res.forEach(dep => {
+                        let rectangle = new google.maps.Rectangle({
+                            strokeColor: "#FF0000",
+                            strokeOpacity: 0.8,
+                            strokeWeight: 0,
+                            fillColor: "#558B2F",
+                            fillOpacity: 0.35,
+                            bounds: {
+                                north: +dep.maxPoint.lat,
+                                south: +dep.minPoint.lat,
+                                east: +dep.maxPoint.long,
+                                west: +dep.minPoint.long
+                            }
+                        });
+                        let bounds = [];
+                        bounds.push(new google.maps.LatLng(+dep.maxPoint.lat, +dep.maxPoint.long));
+                        bounds.push(new google.maps.LatLng(+dep.minPoint.lat, +dep.maxPoint.long));
+                        bounds.push(new google.maps.LatLng(+dep.minPoint.lat, +dep.minPoint.long));
+                        bounds.push(new google.maps.LatLng(+dep.maxPoint.lat, +dep.minPoint.long));
+                        latLngArr.push(bounds);
+
+                    });
+
+                    latLngArr.forEach(dep => {
+                        polygon2 = new google.maps.Polygon({
+                            strokeColor: "#FF0000",
+                            strokeOpacity: 0.8,
+                            strokeWeight: 0,
+                            fillColor: "#558B2F",
+                            fillOpacity: 0.35,
+                            map,
+                            paths: dep
+                        });
+                    });
+
+
+                });
+
+                var wkt = UseWicketToGoFromGooglePolysToWKT(polygon1, polygon2);
+                UseJstsToDissolveGeometries(wkt[0], wkt[1]);
+            }
+
+            DoEverything();
+        });
+
+    </script>
+
+
+</body>
+
+</html>

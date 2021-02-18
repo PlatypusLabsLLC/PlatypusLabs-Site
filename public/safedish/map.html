@@ -1,58 +1,112 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>SafeDish Cities</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7qSpPEch28g5cVV88hlotzWRUJIEC76k&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <style type="text/css">
-      /* Always set the map height explicitly to define the size of the div
+
+<head>
+  <title>SafeDish Cities</title>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://bl.ocks.org/christophermanning/raw/4450188/javascript.util.min.js"></script>
+  <script type="text/javascript" src="https://bl.ocks.org/christophermanning/raw/4450188/jsts.min.js"></script>
+  <script type="text/javascript" src="https://arthur-e.github.io/Wicket/wicket.js"></script>
+  <script type="text/javascript" src="https://arthur-e.github.io/Wicket/wicket-gmap3.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7qSpPEch28g5cVV88hlotzWRUJIEC76k&callback=initMap&libraries=&v=weekly"
+    defer></script>
+  <style type="text/css">
+    /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
+    #map {
+      height: 100%;
+    }
 
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <script>
-      function initMap() {
-        // Create the map.
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 8.5,
-          center: { lat: 31.6, lng: -97.550712 },
-          mapTypeId: "terrain",
-        });
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 5.5,
+        center: { lat: 37.09, lng: -85.712 },
+        mapTypeId: "roadmap",
+      });
+      var arr = [];
+      fetch("/getdepartments.json").then(response => response.json()).then(res => {
+        res.forEach(dep => {
+          dep.regions.forEach(reg => {
+            let bounds = [];
+            reg.geometry.forEach(geo => {
+              bounds.push(new google.maps.LatLng(geo.lat, geo.long));
+            });
 
-        fetch("/getdepartments.json").then(response => response.json()).then(res => {
-          res.forEach(dep => {
-            const rectangle = new google.maps.Rectangle({
+            let poly = new google.maps.Polygon({
               strokeColor: "#FF0000",
               strokeOpacity: 0.8,
               strokeWeight: 0,
-              fillColor: "#A5D6A7",
+              fillColor: "#FF0000",
               fillOpacity: 0.35,
-              map,
-              bounds: {
-                north: +dep.maxPoint.lat,
-                south: +dep.minPoint.lat,
-                east: +dep.maxPoint.long,
-                west: +dep.minPoint.long
-              }
+              paths: bounds
             });
+            arr.push(poly);
           });
         });
+        dissolve(arr, map);
+      });
+    }
+    function dissolve(polys, map) {
+
+      let polyOptions = {
+        strokeColor: '#ea47ff',
+        strokeOpacity: 0.8,
+        strokeWeight: .5,
+        fillColor: '#ea47ff',
+        fillOpacity: 0.3
+      };
+
+      let wicket = new Wkt.Wkt();
+
+      let wktReader = new jsts.io.WKTReader();
+      let wktWriter = new jsts.io.WKTWriter();
+
+      polys = polys.map(poly => wktReader.read(
+        wicket.fromObject(poly).write()
+      ));
+
+      let result = [];
+
+      while (polys.length > 0) {
+        let combined = polys.splice(polys.length - 1, 1)[0];
+        let intersected = false;
+        do {
+          intersected = false;
+          for (let i = polys.length - 1; i > -1; i--) {
+            if (combined.intersects(polys[i])) {
+              combined = combined.union(
+                polys.splice(i, 1)[0]
+              );
+              intersected = true;
+            }
+          }
+        } while (intersected);
+        result.push(wktWriter.write(combined));
       }
-    </script>
-  </head>
-  <body>
-    <div id="map"></div>
-  </body>
+
+      result.forEach(wkt => {
+        wicket.read(wkt);
+        wicket.toObject(polyOptions).setMap(map);
+      });
+
+    }
+  </script>
+</head>
+
+<body>
+  <div id="map"></div>
+</body>
+
 </html>
